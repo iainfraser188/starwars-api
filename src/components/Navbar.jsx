@@ -1,9 +1,14 @@
-import {Link, link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
-        <nav>
-            <Link to="/">Home</Link>
-        </nav>
-    )
+        <>
+            <h1>Star Wars Api</h1>
+            <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
+                <Link to="/">Home</Link>
+            </nav>
+        </>       
+    );
 }
+
+export default Navbar;
