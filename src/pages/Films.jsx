@@ -3,13 +3,13 @@ import { fetchAllFilms } from "../services/apiService";
 
 function Films() {
     const [films, setFilms] = useState([]);
-    const [loading, setLoading] = useState([true]);
-    const [error, setError] = useState([null]);
+    const [loading, setLoading] = useState(true);
+    const [ error, setError] = useState(null);
 
     useEffect(() => {
         fetchAllFilms()
         .then(data => {
-            console.log("film data", data);
+            console.log("people data", data);
             setFilms(data);
             setLoading(false);
         })
@@ -19,15 +19,15 @@ function Films() {
         })
     }, []);
 
-    if (loading) return <p>Loading Films...</p>;
+    if (loading) return <p>Loading characters...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
         <div>
             <h1>Films</h1>
             <ul>
-                {films.map((film, index) => (
-                    <li key={index}>{film}</li>
+                {films.map((movie, index) =>(
+                    <li key={index}>{movie.title}</li>
                 ))}
             </ul>
         </div>
