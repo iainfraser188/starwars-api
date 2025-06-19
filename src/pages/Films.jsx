@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchAllFilms } from "../services/apiService";
-import { filmCard } from "../components/Cards"
-
+import FilmCard from "../components/Cards";
 function Films() {
     const [films, setFilms] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -27,7 +26,7 @@ function Films() {
             <h1>Films</h1>
             <ul>
                 {films.map((movie, index) =>(
-                    <filmCard  key={index} film={movie}/>
+                    <FilmCard  key={index} film={movie}/>
                 ))}
             </ul>
         </div>

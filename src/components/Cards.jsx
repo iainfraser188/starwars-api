@@ -1,4 +1,4 @@
-function filmCard( {film}) {
+function FilmCard( {film}) {
     return (
         <div >
             <h1>{film.title}</h1>
@@ -8,4 +8,4 @@ function filmCard( {film}) {
     )
 }
 
-export default filmCard
+export default FilmCard
