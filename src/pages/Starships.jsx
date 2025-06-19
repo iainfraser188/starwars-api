@@ -9,7 +9,6 @@ function Starships() {
     useEffect(() => {
         fetchAllStarships()
         .then(data => {
-            console.log("starship data", data);
             setStarShips(data);
             setLoading(false);
         })
@@ -19,7 +18,7 @@ function Starships() {
         })
     }, []);
 
-    if (loading) return <p>Loading characters...</p>;
+    if (loading) return <p>Loading starships...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (

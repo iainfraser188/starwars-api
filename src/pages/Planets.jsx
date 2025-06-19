@@ -9,7 +9,6 @@ function Planets() {
     useEffect(() => {
         fetchAllPlanets()
         .then(data => {
-            console.log("people data", data);
             setPlanets(data);
             setLoading(false);
         })
@@ -19,7 +18,7 @@ function Planets() {
         })
     }, []);
 
-    if (loading) return <p>Loading characters...</p>;
+    if (loading) return <p>Loading Planets...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (

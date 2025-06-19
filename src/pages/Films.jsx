@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchAllFilms } from "../services/apiService";
+import { filmCard } from "../components/Cards"
 
 function Films() {
     const [films, setFilms] = useState([]);
@@ -9,7 +10,6 @@ function Films() {
     useEffect(() => {
         fetchAllFilms()
         .then(data => {
-            console.log("people data", data);
             setFilms(data);
             setLoading(false);
         })
@@ -19,7 +19,7 @@ function Films() {
         })
     }, []);
 
-    if (loading) return <p>Loading characters...</p>;
+    if (loading) return <p>Loading Films...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
@@ -27,7 +27,7 @@ function Films() {
             <h1>Films</h1>
             <ul>
                 {films.map((movie, index) =>(
-                    <li key={index}>{movie.title}</li>
+                    <filmCard  key={index} film={movie}/>
                 ))}
             </ul>
         </div>

@@ -9,7 +9,6 @@ function People() {
     useEffect(() => {
         fetchAllPeople()
         .then(data => {
-            console.log("people data", data);
             setPeople(data);
             setLoading(false);
         })

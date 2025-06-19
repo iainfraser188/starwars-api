@@ -9,7 +9,6 @@ function Species() {
     useEffect(() => {
         fetchAllSpecies()
         .then(data => {
-            console.log("people data", data);
             setSpecies(data);
             setLoading(false);
         })
@@ -19,7 +18,7 @@ function Species() {
         })
     }, []);
 
-    if (loading) return <p>Loading characters...</p>;
+    if (loading) return <p>Loading Species...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (

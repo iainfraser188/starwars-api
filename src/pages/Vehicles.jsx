@@ -9,7 +9,6 @@ function Vehicles() {
     useEffect(() => {
         fetchAllVehicles()
         .then(data => {
-            console.log("vehicle data", data);
             setVehicles(data);
             setLoading(false);
         })
@@ -19,7 +18,7 @@ function Vehicles() {
         })
     }, []);
 
-    if (loading) return <p>Loading characters...</p>;
+    if (loading) return <p>Loading vehicles...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
