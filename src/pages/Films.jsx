@@ -11,6 +11,7 @@ function Films() {
         fetchAllFilms()
         .then(data => {
             setFilms(data);
+            console.log("data",data);
             setLoading(false);
         })
         .catch(err =>{
@@ -25,11 +26,11 @@ function Films() {
     return (
         <div>
             <h1>Films</h1>
-            <ul>
+            <div className="card-grid">
                 {films.map((movie, index) =>(
                     <FilmCard  key={index} film={movie}/>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
