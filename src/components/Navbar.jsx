@@ -1,14 +1,21 @@
 import { Link } from 'react-router-dom';
-
+import './Navbar.css';
 function Navbar() {
     return (
         <>
-            <h1>Star Wars Api</h1>
-            <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
+        <div className='navbar'>
+            <h1 className='navbar-header' >Star Wars Api</h1>
+            <nav className='navbar-items' >
                 <Link to="/">Home</Link>
-                <Link to="/Films">Films</Link>
-                <Link to="/People">People</Link>
+                <Link to="/Films" >Films</Link>
+                <Link to="/People" >People</Link>
+                <Link to="/Planets" >Planets</Link>
+                <Link to="/Species" >Species</Link>
+                <Link to="/Starships" >Starships</Link>
+                <Link to="/Vehicles" >Vehicles</Link>
             </nav>
+        </div>
+            
         </>       
     );
 }

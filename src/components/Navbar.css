@@ -1,0 +1,25 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #df1111;
+    z-index: 1000;
+    background-color: #252424;
+}
+
+.navbar-header {
+    color:yellow;
+    margin: 0px 0px 1em 0px; 
+}
+
+.navbar-items {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-items a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
