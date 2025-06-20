@@ -33,3 +33,9 @@ export async function fetchAllStarships() {
     if (!response.ok) throw new Error('Failed to fetch data');
     return await response.json();
 }
+
+export async function fetchSinglePlanet(url) {
+     const response = await fetch(url);
+    if (!response.ok) throw new Error('Failed to fetch data');
+    return await response.json();
+}

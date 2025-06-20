@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchAllVehicles } from "../services/apiService";
 import { useNavigate } from "react-router-dom";
 import { VehicleCard } from "../components/Cards";
+
 function Vehicles() {
     const [vehicles, setVehicles] = useState([]);
     const [loading, setLoading] = useState(true);

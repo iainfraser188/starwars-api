@@ -3,7 +3,7 @@ import React from 'react';
 function Home() {
   return (
     <div>
-        <div className='homePageButtonContainer'>
+        <div >
             <button>People</button>
             <button>Planets</button>
             <button>Species</button>

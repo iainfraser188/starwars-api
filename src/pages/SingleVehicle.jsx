@@ -19,7 +19,7 @@ function SingleVehicle(){
             <p>Manufacturer: {vehicle.manufacturer} </p>
             <p>Cost: {vehicle.cost_in_credits} Credits</p>
             <p>Crew: {vehicle.crew}</p>
-            <p>Length: {vehicle.length}</p>
+            <p>Length: {vehicle.length} m</p>
         </div>
     );
 }
