@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchAllVehicles } from "../services/apiService";
-
+import { useNavigate } from "react-router-dom";
+import { VehicleCard } from "../components/Cards";
 function Vehicles() {
     const [vehicles, setVehicles] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -18,17 +19,23 @@ function Vehicles() {
         })
     }, []);
 
+    const navigate = useNavigate();
+    const handleCardClick = (vehicle) => {
+        navigate("/Vehicle",{state: {vehicle}});
+    };
+
+
     if (loading) return <p>Loading vehicles...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
         <div>
             <h1>Vehicles</h1>
-            <ul>
+            <div className="card-grid">
                 {vehicles.map((vehicle, index) =>(
-                    <li key={index}>{vehicle.name}</li>
+                    <VehicleCard key={index} vehicle={vehicle} onClick={() => handleCardClick(vehicle)} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

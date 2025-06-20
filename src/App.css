@@ -45,7 +45,7 @@
 }
 
 .card-grid {
-   display: grid;
+  display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 1rem;
   padding: 1rem;
@@ -58,3 +58,4 @@
 .pageElement {
   padding-top: 9em;
 }
+

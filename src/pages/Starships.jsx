@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchAllStarships } from "../services/apiService";
+import { StarShipCard } from "../components/Cards";
+import { useNavigate } from "react-router-dom";
 
 function Starships() {
     const [starShips, setStarShips] = useState([]);
@@ -18,17 +20,22 @@ function Starships() {
         })
     }, []);
 
+    const navigate = useNavigate();
+    const handleCardClick = (starship) => {
+        navigate("/StarShip",{state: {starship}});
+    };
+
     if (loading) return <p>Loading starships...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
         <div>
             <h1>StarShips</h1>
-            <ul>
-                {starShips.map((ship, index) =>(
-                    <li key={index}>{ship.name}</li>
+            <div className="card-grid">
+                {starShips.map((starship, index) =>(
+                    <StarShipCard key={index} starship={starship} onClick={() => handleCardClick(starship)} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

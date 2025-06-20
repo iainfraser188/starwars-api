@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchAllPlanets } from "../services/apiService";
+import { PlanetCard } from "../components/Cards";
+import { useNavigate } from "react-router-dom";
 
 function Planets() {
     const [planets, setPlanets] = useState([]);
@@ -18,17 +20,22 @@ function Planets() {
         })
     }, []);
 
+    const navigate = useNavigate();
+    const handleCardClick = (planet) => {
+        navigate("/Planet",{state: {planet}});
+    };
+
     if (loading) return <p>Loading Planets...</p>;
     if (error) return <p>Error: {error}</p>;
 
     return (
         <div>
             <h1>Planets</h1>
-            <ul>
+            <div className="card-grid">
                 {planets.map((planet, index) =>(
-                    <li key={index}>{planet.name}</li>
+                    <PlanetCard key={index} planet={planet} onClick={() => handleCardClick(planet)}/>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
