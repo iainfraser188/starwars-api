@@ -3,14 +3,7 @@ import React from 'react';
 function Home() {
   return (
     <div>
-        <div >
-            <button>People</button>
-            <button>Planets</button>
-            <button>Species</button>
-            <button>Vehicles</button>
-            <button>Starships</button>
-            <button>Films</button>
-        </div>
+        <p className='home-page-title'>Star Wars</p>
     </div>
   );
 }
