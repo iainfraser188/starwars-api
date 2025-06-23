@@ -1,4 +1,4 @@
-to see the page visit https://iainfraser188.github.io/
+to see the page visit https://iainfraser188.github.io/starwars-api/
 
 # React + Vite
 
